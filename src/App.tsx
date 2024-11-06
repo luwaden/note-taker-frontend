@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import NoteGrid from "./components/NoteGrid";
+import NoteCard from "./components/NoteCard";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import OnePage from "./components/OnePage";
+import AddNote from "./components/AddNote";
+import EditNote from "./components/EditNote";
+import AuthPage from "./components/auth/authPage";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/auth' element={<AuthPage />} />
+        <Route path='/' element={<HomePage />}>
+          <Route path='' element={<NoteGrid />} />
+          <Route path='one-note/:id' element={<OnePage />} />
+          <Route path='add-note' element={<AddNote />} />
+          <Route path='edit-note/:id' element={<EditNote />} />
+        </Route>
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

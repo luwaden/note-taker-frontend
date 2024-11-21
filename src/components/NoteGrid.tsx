@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import NoteCard from "./NoteCard";
 import { Note } from "../model/NoteTypes";
-import { NoteContext } from "../context/note.context";
+
 import Header from "./Header";
 
 // const NoteGrid = () => {

@@ -1,3 +1,5 @@
-import { createContext } from "react";
+import React, { createContext } from "react";
 
-export const NoteContext = createContext<any>({});
+const UserContext = React.createContext<any>({});
+
+export default UserContext;

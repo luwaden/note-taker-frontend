@@ -12,8 +12,9 @@ export interface ILogin {
 }
 
 export interface ISignupForm {
-  username: string;
   email: string;
   password: string;
+  userName: string;
+  phoneNumber: string;
   confirmPassword: string;
 }
